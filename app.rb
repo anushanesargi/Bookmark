@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/bookmarks'
 
 class BookmarkManager < Sinatra::Base
   configure :development do
@@ -11,6 +12,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
+    @list = Bookmarks.all
     erb :bookmarks
     # "List of Bookmarks"
   end
