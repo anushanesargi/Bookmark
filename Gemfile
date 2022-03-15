@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '3.1.1'
 
 gem 'sinatra'
+gem 'pg'
 
 group :test do
   gem 'capybara'
