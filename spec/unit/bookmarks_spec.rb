@@ -15,5 +15,14 @@ describe Class do
     expect(bookmarks).to include "http://www.destroyallsoftware.com"
     expect(bookmarks).to include "http://www.google.com"
   end
+
+  describe '#create' do
+    it 'adds url to the database' do
+      Bookmarks.create("https://github.com")
+
+      expect(Bookmarks.all).to include "https://github.com"
+    end
+  end
+
   
 end
